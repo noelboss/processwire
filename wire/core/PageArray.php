@@ -457,7 +457,7 @@ class PageArray extends PaginatedArray implements WirePaginatable {
 	 *
 	 */
 	protected function filterData($selectors, $not = false) {
-		if(is_string($selectors) && $selectors[0] === '/') $selectors = "path=$selectors";
+		if($selectors && is_string($selectors) && $selectors[0] === '/') $selectors = "path=$selectors";
 		return parent::filterData($selectors, $not); 
 	}
 
